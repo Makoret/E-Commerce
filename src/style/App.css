@@ -1,5 +1,4 @@
 body header {
-  background-color: green;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,4 +16,18 @@ body header .logo {
   background-size: 100%;
   width: 200px;
   height: 60px;
+}
+
+body header .FaOpencart {
+  height: 40px;
+  width: 40px;
+  color: orange;
+}
+
+body .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
