@@ -1,0 +1,15 @@
+body {
+    header {
+        background-color: green;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 4rem;
+        .logo {
+            background-size: 100%;
+            width: 200px;
+            height: 60px;
+        }
+    }
+}
