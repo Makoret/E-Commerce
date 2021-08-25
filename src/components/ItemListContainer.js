@@ -1,9 +1,13 @@
 import { React } from "react";
+import ItemCount from "./ItemCount";
 
 export default function itemListContainer(params) {
     return (
         <div className="main">
             <Welcome Text="Lista de productos" />
+            <div className="gridContainer">
+                <ItemCount stock="5" initial="1" onAdd="1" />
+            </div>
         </div>
     );
 }
