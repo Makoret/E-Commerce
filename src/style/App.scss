@@ -28,6 +28,10 @@ body {
                 input {
                     text-align: center;
                 }
+                .selector {
+                    display: flex;
+                    justify-content: space-between;
+                }
             }
         }
     }

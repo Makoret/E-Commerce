@@ -6,7 +6,7 @@ export default function itemListContainer(params) {
         <div className="main">
             <Welcome Text="Lista de productos" />
             <div className="gridContainer">
-                <ItemCount stock="5" initial="1" onAdd="1" />
+                <ItemCount stock={5} initial={1} onAdd={(cantidad) => console.log(cantidad)} />
             </div>
         </div>
     );

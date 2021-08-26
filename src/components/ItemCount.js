@@ -1,28 +1,38 @@
 import React, { useState } from "react";
 
 export default function ItemCount({ stock, initial, onAdd }) {
+    let [contador, setContador] = useState(initial);
+
     const aumentar = () => {
-        if (initial > stock) {
-            initial++;
-            console.log(initial);
+        if (contador < stock) {
+            setContador(parseInt(contador) + 1);
+            console.log(contador);
         }
     };
     const disminuir = () => {
-        if (initial < 0) {
-            initial--;
-            console.log(initial);
+        if (contador > 1) {
+            setContador(parseInt(contador) - 1);
+            console.log(contador);
+        }
+    };
+
+    const agregar = () => {
+        if (stock > 1) {
+            onAdd(contador);
         }
     };
 
     return (
         <div className="gridItem">
             <div>Stock: {stock}</div>
-            <div>
+            <div className="selector">
                 <button onClick={aumentar}>+</button>
-                <input className="monto" value={initial}></input>
+                <p className="monto">{contador}</p>
                 <button onClick={disminuir}>-</button>
             </div>
-            <button>Agregar</button>
+            <button disabled={stock > 0 ? false : true} onClick={agregar}>
+                Agregar al carrito
+            </button>
         </div>
     );
 }
