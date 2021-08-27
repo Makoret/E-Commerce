@@ -1,27 +1,21 @@
 import React, { useEffect, useState } from "react";
+import Item from "./Item";
 
-const promesa = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(
-            () =>
-                resolve([
-                    { id: 29, destacado: true, nombre: "mango" },
-                    { id: 30, destacado: true, nombre: "platano" },
-                    { id: 41, destacado: true, nombre: "manzana" },
-                    { id: 52, destacado: false, nombre: "mandarina" },
-                    { id: 23, destacado: true, nombre: "naranja" },
-                ]),
-            1000
-        );
-    });
-};
+export default function ItemList(params) {
+    const { productos } = params;
+    console.log(productos);
 
-export default function ItemList() {
+    const promesa = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => resolve(productos), 2000);
+        });
+    };
     const [dataToShow, setDataToShow] = useState([]);
 
     useEffect(() => {
         promesa().then((data) => {
-            let aux = data.filter((producto) => producto.destacado);
+            let aux = data.filter((productos) => productos.title);
+            console.log(aux);
             setDataToShow(aux);
         });
     }, []);
@@ -29,10 +23,10 @@ export default function ItemList() {
     return dataToShow.length === 0 ? (
         <h1>Cargando...</h1>
     ) : (
-        <ul>
+        <div className="gridContainer">
             {dataToShow.map((element) => (
-                <li key={element.id}>{element.nombre}</li>
+                <Item productos={element} />
             ))}
-        </ul>
+        </div>
     );
 }

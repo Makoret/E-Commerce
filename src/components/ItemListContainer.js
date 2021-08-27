@@ -7,9 +7,7 @@ export default function itemListContainer(params) {
     return (
         <div className="main">
             <Welcome Text="Lista de productos" />
-            <div className="gridContainer">
-                <ItemList productos={productos} />
-            </div>
+            <ItemList productos={productos} />
         </div>
     );
 }
