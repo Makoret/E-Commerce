@@ -23,7 +23,7 @@ const Data = {
             id: 4,
             title: "Sopa Ramen Instantánea con Tallarines Nissin sabor a Pollo - 85gr",
             price: 1.3,
-            pictureUrl: "https://sugope.vteximg.com.br/arquivos/ids/163734-1000-1000/227300.jpg?v=637638835401200000",
+            pictureUrl: "https://sugope.vteximg.com.br/arquivos/ids/163573-1000-1000/227300.jpg?v=637636241347500000",
         },
         {
             id: 5,

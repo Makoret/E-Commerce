@@ -39,7 +39,12 @@ body .main {
 }
 
 body .main .gridContainer {
+  width: 100%;
   margin: 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
 }
 
 body .main .gridContainer .gridItem {
@@ -50,6 +55,10 @@ body .main .gridContainer .gridItem {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+body .main .gridContainer .gridItem img {
+  width: 100%;
 }
 
 body .main .gridContainer .gridItem input {
