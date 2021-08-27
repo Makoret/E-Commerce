@@ -1,6 +1,6 @@
 {
-  "name": "e-store",
-  "homepage": "https://makoret.github.io/E-Store",
+  "name": "e-commerce",
+  "homepage": "https://makoret.github.io/E-Commerce",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
