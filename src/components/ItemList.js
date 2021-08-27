@@ -3,10 +3,9 @@ import Item from "./Item";
 
 export default function ItemList(params) {
     const { productos } = params;
-    console.log(productos);
 
     const promesa = () => {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             setTimeout(() => resolve(productos), 2000);
         });
     };
@@ -15,11 +14,9 @@ export default function ItemList(params) {
     useEffect(() => {
         promesa().then((data) => {
             let aux = data.filter((productos) => productos.title);
-            console.log(aux);
             setDataToShow(aux);
         });
     }, []);
-    // console.log("test");
     return dataToShow.length === 0 ? (
         <h1>Cargando...</h1>
     ) : (

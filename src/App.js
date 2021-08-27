@@ -7,7 +7,6 @@ import ItemListContainer from "./components/ItemListContainer.js";
 
 function App() {
     const { productos } = Data;
-    console.log(productos);
     return (
         <div className="App">
             <NavBar />

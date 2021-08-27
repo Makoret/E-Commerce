@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+body {
+  font-family: "Fjalla One";
+}
+
 body header {
   width: 100%;
   display: -webkit-box;
@@ -17,6 +22,27 @@ body header .logo {
   width: 200px;
   height: 60px;
   background-repeat: no-repeat;
+  background-image: url("../images/Logo.png");
+}
+
+body header .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body header .search .lista {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body header .search .lista .selector {
+  width: 150px;
+}
+
+body header .search .lista :active .navSearchDropdown {
+  display: unset;
 }
 
 body header .FaOpencart {
@@ -39,7 +65,7 @@ body .main {
 }
 
 body .main .gridContainer {
-  width: 100%;
+  width: 80%;
   margin: 50px;
   display: -ms-grid;
   display: grid;
@@ -55,10 +81,13 @@ body .main .gridContainer .gridItem {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .main .gridContainer .gridItem img {
-  width: 100%;
+  width: 50%;
 }
 
 body .main .gridContainer .gridItem input {
@@ -72,4 +101,8 @@ body .main .gridContainer .gridItem .selector {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+body .main .gridContainer .gridItem p {
+  width: 65%;
 }
