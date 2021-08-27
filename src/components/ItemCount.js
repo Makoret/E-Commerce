@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function ItemCount({ stock, initial, onAdd }) {
     let [contador, setContador] = useState(initial);
@@ -6,13 +6,11 @@ export default function ItemCount({ stock, initial, onAdd }) {
     const aumentar = () => {
         if (contador < stock) {
             setContador(parseInt(contador) + 1);
-            console.log(contador);
         }
     };
     const disminuir = () => {
         if (contador > 1) {
             setContador(parseInt(contador) - 1);
-            console.log(contador);
         }
     };
 
@@ -21,6 +19,10 @@ export default function ItemCount({ stock, initial, onAdd }) {
             onAdd(contador);
         }
     };
+    useEffect(() => {
+        console.log(contador);
+        return () => {};
+    });
 
     return (
         <div className="gridItem">

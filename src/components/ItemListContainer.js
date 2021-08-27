@@ -1,12 +1,14 @@
 import { React } from "react";
-import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
 
 export default function itemListContainer(params) {
+    const { productos } = params;
+    console.log(productos);
     return (
         <div className="main">
             <Welcome Text="Lista de productos" />
             <div className="gridContainer">
-                <ItemCount stock={5} initial={1} onAdd={(cantidad) => console.log(cantidad)} />
+                <ItemList productos={productos} />
             </div>
         </div>
     );
@@ -14,5 +16,3 @@ export default function itemListContainer(params) {
 function Welcome(props) {
     return <h1>{props.Text}</h1>;
 }
-
-const element = <itemListContainer Text="Lista de productos" />;
