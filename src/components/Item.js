@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ItemDetail(item) {
+export default function Item(item) {
     const { productos } = item;
     return (
         <div key={productos.id} className="gridItem">

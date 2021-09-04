@@ -1,25 +1,15 @@
 import React, { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail";
+import Item from "./Item";
 
 export default function ItemList(params) {
     const { productos } = params;
 
-    const [dataToShow, setDataToShow] = useState([]);
-
-    useEffect(() => {
-        fetch(productos)
-            .then((response) => response.json())
-            .then((data) => {
-                const aux = data.filter((element) => element.id);
-                setDataToShow(aux);
-            });
-    }, []);
-    return dataToShow.length === 0 ? (
+    return productos.length === 0 ? (
         <h1 className="textoDeCarga">Cargando...</h1>
     ) : (
         <div className="gridContainer">
-            {dataToShow.map((element) => (
-                <ItemDetail productos={element} />
+            {productos.map((element) => (
+                <Item productos={element} />
             ))}
         </div>
     );
