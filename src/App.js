@@ -1,14 +1,17 @@
 import "./style/reset.css";
 import "./style/App.css";
 import NavBar from "./components/navBar";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import ItemListContainer from "./components/ItemListContainer.js";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
     return (
         <div className="App">
             <NavBar />
-            <ItemListContainer />
+            <ItemDetailContainer />
+            {/* <ItemListContainer /> */}
         </div>
     );
 }

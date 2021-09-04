@@ -25,7 +25,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
     });
 
     return (
-        <div className="gridItem">
+        <div className="contador">
             <div>Stock: {stock}</div>
             <div className="selector">
                 <button onClick={aumentar}>+</button>

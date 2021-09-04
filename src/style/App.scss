@@ -65,5 +65,29 @@ body {
                 }
             }
         }
+        .itemDetail {
+            display: flex;
+            max-height: 90vh;
+            align-items: center;
+            width: 100vw;
+            .itemImagen {
+                height: 100%;
+            }
+            .data {
+                width: 30vw;
+                height: 40vh;
+                text-align: center;
+                font-size: 1.8rem;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-evenly;
+                .selector {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
     }
 }

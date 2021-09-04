@@ -111,3 +111,50 @@ body .main .gridContainer .gridItem .selector {
 body .main .gridContainer .gridItem p {
   width: 65%;
 }
+
+body .main .itemDetail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 90vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+}
+
+body .main .itemDetail .itemImagen {
+  height: 100%;
+}
+
+body .main .itemDetail .data {
+  width: 30vw;
+  height: 40vh;
+  text-align: center;
+  font-size: 1.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body .main .itemDetail .data .selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
