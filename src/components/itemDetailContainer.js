@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import ItemDetail from "./ItemDetail";
 
 const promiseDelay = () => {
-    const E_COMMERCE_API = "https://mocki.io/v1/1047080a-dab8-46c7-b3d1-66f84645bd60";
+    const E_COMMERCE_API = "https://mocki.io/v1/1877bd17-9d63-41f4-8f17-a01f6bf6ebe9";
     return new Promise((resolve, reject) => {
         setTimeout(() => resolve(fetch(E_COMMERCE_API)), 1000);
     });
 };
 
 export default function ItemDetailContainer() {
+    const { itemId } = useParams();
     const [dataToShow, setDataToShow] = useState([]);
 
     useEffect(() => {
         promiseDelay()
             .then((response) => response.json())
             .then((data) => {
-                const aux = data.find((element) => {
-                    console.log(element);
-                    return element.id === 2;
-                });
+                const aux = data.find((element) => element.id === Number(itemId));
                 setDataToShow(aux);
             });
-    }, []);
+    }, [itemId]);
 
     return dataToShow.length === 0 ? (
         <h1 className="textoDeCarga">Cargando...</h1>

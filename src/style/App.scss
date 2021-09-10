@@ -8,6 +8,11 @@ body {
         align-items: center;
         justify-content: space-evenly;
         height: 4rem;
+        background-color: #d1fca9;
+        .categoria {
+            color: #e5652b;
+            text-decoration: none;
+        }
         .logo {
             background-size: 100%;
             width: 200px;
@@ -33,13 +38,19 @@ body {
             color: orange;
         }
     }
+    .textoDeCarga {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .main {
         display: flex;
         flex-direction: column;
         align-items: center;
         min-height: 90vh;
-        .textoDeCarga {
-            margin: auto;
+        .h1 {
+            margin: 15px;
         }
         .gridContainer {
             width: 80%;
@@ -47,11 +58,14 @@ body {
             display: grid;
             grid-template-columns: 33% 33% 33%;
             .gridItem {
+                text-decoration: none;
+                color: black;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 img {
                     width: 50%;
+                    margin: 10px;
                 }
                 input {
                     text-align: center;
@@ -63,15 +77,21 @@ body {
                 p {
                     width: 65%;
                 }
+                :nth-child(3) {
+                    margin-top: 10px;
+                    text-align: right;
+                }
             }
         }
         .itemDetail {
             display: flex;
             max-height: 90vh;
             align-items: center;
+            height: 100vh;
             width: 100vw;
+            justify-content: center;
             .itemImagen {
-                height: 100%;
+                height: 75%;
             }
             .data {
                 width: 30vw;

@@ -15,6 +15,12 @@ body header {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: 4rem;
+  background-color: #d1fca9;
+}
+
+body header .categoria {
+  color: #e5652b;
+  text-decoration: none;
 }
 
 body header .logo {
@@ -51,6 +57,19 @@ body header .FaOpencart {
   color: orange;
 }
 
+body .textoDeCarga {
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 body .main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -65,8 +84,8 @@ body .main {
   min-height: 90vh;
 }
 
-body .main .textoDeCarga {
-  margin: auto;
+body .main .h1 {
+  margin: 15px;
 }
 
 body .main .gridContainer {
@@ -79,6 +98,8 @@ body .main .gridContainer {
 }
 
 body .main .gridContainer .gridItem {
+  text-decoration: none;
+  color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,6 +114,7 @@ body .main .gridContainer .gridItem {
 
 body .main .gridContainer .gridItem img {
   width: 50%;
+  margin: 10px;
 }
 
 body .main .gridContainer .gridItem input {
@@ -112,6 +134,11 @@ body .main .gridContainer .gridItem p {
   width: 65%;
 }
 
+body .main .gridContainer .gridItem :nth-child(3) {
+  margin-top: 10px;
+  text-align: right;
+}
+
 body .main .itemDetail {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -120,11 +147,15 @@ body .main .itemDetail {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100vh;
   width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .main .itemDetail .itemImagen {
-  height: 100%;
+  height: 75%;
 }
 
 body .main .itemDetail .data {

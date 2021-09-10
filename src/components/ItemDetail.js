@@ -8,7 +8,7 @@ export default function ItemDetail({ item }) {
             <div className="data">
                 <p>{item.title}</p>
                 <p>{item.price} PEN</p>
-                <ItemCount stock={5} initial={1} onAdd={(cantidad) => console.log(cantidad)} />
+                <ItemCount stock={item.stock} initial={1} onAdd={(cantidad) => console.log(cantidad)} />
             </div>
         </div>
     );
