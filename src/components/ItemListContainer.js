@@ -3,7 +3,8 @@ import { useParams } from "react-router";
 import ItemList from "./ItemList";
 
 export default function ItemListContainer() {
-    const categoriaId = useParams();
+    const { categoriaId } = useParams();
+    console.log(categoriaId);
     const E_COMMERCE_API = "https://mocki.io/v1/1877bd17-9d63-41f4-8f17-a01f6bf6ebe9";
 
     const [dataToShow, setDataToShow] = useState([]);
@@ -13,7 +14,7 @@ export default function ItemListContainer() {
             .then((response) => response.json())
             .then((data) => {
                 const aux = data.filter((element) =>
-                    categoriaId.categoriaId ? element.categoria === categoriaId.categoriaId : element.categoria
+                    categoriaId ? element.categoria === categoriaId : element.categoria
                 );
                 setDataToShow(aux);
             });

@@ -9,22 +9,24 @@ export default function navBar(params) {
         <header>
             <Logo />
             {/* <div className="location">location</div> */}
-            <Link className="categoria" to={`/ItemListContainer/pastas`}>
+            <Link className="categoria" to={`/categoria/pastas`}>
                 Pastas
             </Link>
-            <Link className="categoria" to={`/ItemListContainer/instantaneos`}>
+            <Link className="categoria" to={`/categoria/instantaneos`}>
                 Instantaneos
             </Link>
-            <Link className="categoria" to={`/ItemListContainer/cremas`}>
+            <Link className="categoria" to={`/categoria/cremas`}>
                 Cremas
             </Link>
-            <Link className="categoria" to={`/ItemListContainer/salsas`}>
+            <Link className="categoria" to={`/categoria/salsas`}>
                 Salsas
             </Link>
             {/* <Search />
             <div className="user">user</div>
-            <div className="history">history</div> */}
-            <CartWidget />
+        <div className="history">history</div> */}
+            <Link className="cart" to={`/cart`}>
+                <CartWidget />
+            </Link>
         </header>
     );
 }
