@@ -20,7 +20,6 @@ export default function ItemCount({ stock, initial, onAdd }) {
         }
     };
     useEffect(() => {
-        console.log(contador);
         return () => {};
     });
 

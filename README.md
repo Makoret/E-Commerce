@@ -20,4 +20,8 @@ conceptos de react usados en esta aplicación:
 
 ### `Map`
 
+### `API`
+
+### `Ruteo`
+
 Este es un proyecto en pleno desarrollo.

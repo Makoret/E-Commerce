@@ -5,11 +5,12 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer.js";
 import ItemDetailContainer from "./components/ItemDetailContainer.js";
 import Cart from "./components/Cart.js";
+import CustomProvider from "./context/cartContext.js";
 
 function App() {
     return (
         <BrowserRouter>
-            <div className="App">
+            <CustomProvider>
                 <NavBar />
                 <Switch>
                     <Route exact path="/" component={ItemListContainer} />
@@ -17,7 +18,7 @@ function App() {
                     <Route path="/item/:itemId" component={ItemDetailContainer} />
                     <Route path="/cart" component={Cart} />
                 </Switch>
-            </div>
+            </CustomProvider>
         </BrowserRouter>
     );
 }
