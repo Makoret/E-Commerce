@@ -2,6 +2,7 @@
 
 body {
     font-family: "Fjalla One";
+
     header {
         width: 100%;
         display: flex;
@@ -9,10 +10,12 @@ body {
         justify-content: space-evenly;
         height: 4rem;
         background-color: #d1fca9;
+
         .categoria {
             color: #e5652b;
             text-decoration: none;
         }
+
         .logo {
             background-size: 100%;
             width: 200px;
@@ -20,69 +23,139 @@ body {
             background-repeat: no-repeat;
             background-image: url("../images/Logo.png");
         }
+
         .search {
             display: flex;
+
             .lista {
                 display: flex;
+
                 .selector {
                     width: 150px;
                 }
             }
+
             .lista :active .navSearchDropdown {
                 display: unset;
             }
         }
+
         .FaOpencart {
             height: 40px;
             width: 40px;
             color: orange;
         }
     }
+
+    .cartReceipt {
+        width: 65vw;
+        margin: auto;
+
+        .cartReceiptData {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .cartItem {
+                display: flex;
+                width: 50vw;
+                height: 20vh;
+                align-items: center;
+                justify-content: space-between;
+
+                .cartThumbnail {
+                    width: 20vh;
+                    height: 20vh;
+                }
+
+                .cartInfo {
+                    display: flex;
+                    height: 50%;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                }
+            }
+
+            .cartDelButton {
+                transform: scale(1.5);
+            }
+
+            .cartDelButton:active {
+                transform: scale(1);
+            }
+
+            .cartSubTotal {
+                width: 10vw;
+
+            }
+        }
+
+        .cartCost {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            justify-content: center;
+            padding: 3vw;
+        }
+    }
+
     .textoDeCarga {
         min-height: 80vh;
         display: flex;
-        justify-content: center;
         align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
     }
+
     .main {
         display: flex;
         flex-direction: column;
         align-items: center;
         min-height: 90vh;
+
         h1 {
             margin: 15px;
         }
+
         .gridContainer {
             width: 80%;
             margin: 50px;
             display: grid;
             grid-template-columns: 33% 33% 33%;
+
             .gridItem {
                 text-decoration: none;
                 color: black;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
                 img {
                     width: 50%;
                     margin: 10px;
                 }
+
                 input {
                     text-align: center;
                 }
+
                 .selector {
                     display: flex;
                     justify-content: space-between;
                 }
+
                 p {
                     width: 65%;
                 }
+
                 :nth-child(3) {
                     margin-top: 10px;
                     text-align: right;
                 }
             }
         }
+
         .itemDetail {
             display: flex;
             max-height: 90vh;
@@ -90,9 +163,11 @@ body {
             height: 100vh;
             width: 100vw;
             justify-content: center;
+
             .itemImagen {
                 height: 75%;
             }
+
             .data {
                 width: 30vw;
                 height: 40vh;
@@ -102,6 +177,7 @@ body {
                 align-items: center;
                 flex-direction: column;
                 justify-content: space-evenly;
+
                 .selector {
                     display: flex;
                     justify-content: space-between;

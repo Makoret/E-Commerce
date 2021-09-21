@@ -8,14 +8,14 @@ export default function ItemDetail({ item }) {
 
     const { addItem } = useContext(contexto);
 
-    const onAdd = (cantidad) => {
+    const agregar = (cantidad) => {
         const nuevoProducto = { ...item, cantidad };
         addItem(nuevoProducto);
         setCantidadCompra(cantidad);
     };
 
     useEffect(() => {
-        return () => {};
+        return () => { };
     }, [cantidadCompra]);
 
     return (
@@ -25,7 +25,7 @@ export default function ItemDetail({ item }) {
                 <p>{item.title}</p>
                 <p>{item.price} PEN</p>
                 {cantidadCompra === 0 ? (
-                    <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+                    <ItemCount stock={item.stock} initial={1} onAdd={agregar} />
                 ) : (
                     <Link to={`/Cart`}>
                         <button>Terminar mi compra</button>
