@@ -1,29 +1,27 @@
 import React, { } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import $ from 'jquery'
+import { GiPriceTag } from "react-icons/gi";
+import { AiOutlineNumber } from "react-icons/ai";
 
-export default function CartElement(item, { del }) {
+
+export default function CartElement(item, { remove }) {
     const { producto } = item;
 
-    // $(".cartBtn").onClick = function () {
-    //     console.log(producto);
-    // }
+    const removeItem = () => {
+        remove(producto.id)
+    }
 
-    // function erase(element) {
-    //     console.log(element);
-    //     /* del(element) */
-    // }
     return (
         <div className="cartReceiptData">
             <div className="cartItem">
                 <img className="cartThumbnail" src={producto.pictureUrl} alt={producto.title} />
                 <div className="cartInfo">
                     <p>{producto.title}</p>
-                    <p>P. Unidad: {producto.price} PEN</p>
-                    <p>Cantidad: {producto.cantidad}</p>
+                    <p><GiPriceTag /> {producto.price} PEN</p>
+                    <p><AiOutlineNumber /> {producto.cantidad}</p>
                 </div>
             </div>
-            <button className="cartBtn">
+            <button className="cartBtn" onClick={removeItem}>
                 <RiDeleteBin6Line className="cartDelButton" />
             </button>
             <div className="cartSubtotal">

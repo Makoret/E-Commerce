@@ -19,7 +19,6 @@ const CustomProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        console.log(carrito);
         return () => {
         }
     }, [carrito])

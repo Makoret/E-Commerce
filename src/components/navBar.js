@@ -24,7 +24,7 @@ export default function navBar(params) {
             {/* <Search />
             <div className="user">user</div>
         <div className="history">history</div> */}
-            <Link className="cart" to={`/cart`}>
+            <Link className="cart" to={`/Cart`}>
                 <CartWidget />
             </Link>
         </header>
