@@ -1,15 +1,13 @@
-import React, { } from "react";
+import React, { useContext } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { GiPriceTag } from "react-icons/gi";
 import { AiOutlineNumber } from "react-icons/ai";
+import { contexto } from "../context/cartContext";
 
 
-export default function CartElement(item, { remove }) {
+export default function CartElement(item) {
+    const { removeItem } = useContext(contexto);
     const { producto } = item;
-
-    const removeItem = () => {
-        remove(producto.id)
-    }
 
     return (
         <div className="cartReceiptData">
@@ -21,7 +19,7 @@ export default function CartElement(item, { remove }) {
                     <p><AiOutlineNumber /> {producto.cantidad}</p>
                 </div>
             </div>
-            <button className="cartBtn" onClick={removeItem}>
+            <button className="cartBtn" onClick={() => { removeItem(producto) }}>
                 <RiDeleteBin6Line className="cartDelButton" />
             </button>
             <div className="cartSubtotal">

@@ -4,14 +4,14 @@ import CartElement from "./CartElement";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
-    const { removeItem, carrito } = useContext(contexto);
+    const { removeItem, carrito, clearCart } = useContext(contexto);
     const [total, setTotal] = useState(0)
     const [totalItems, setTotalItems] = useState(0)
 
-    const del = (element) => {
-        console.log(element.title);
-        // removeItem(element);
-    };
+
+    const clear = () => {
+        clearCart();
+    }
 
     useEffect(() => {
         let newTotal = 0
@@ -24,11 +24,12 @@ export default function Cart() {
         <div className="cartReceipt">
             {carrito.map((element) => (
                 <Fragment key={element.id}>
-                    <CartElement producto={element} remove={del} />
+                    <CartElement producto={element} />
                 </Fragment>
             ))}
             <div className="cartCost">Total: {total}</div>
             <div className="cartCost">Cantidad de items: {totalItems}</div>
+            <button onClick={clear}>Vaciar Carrito</button>
         </div>
     ) : (
         <div className="textoDeCarga">

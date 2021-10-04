@@ -23,15 +23,17 @@ const CustomProvider = ({ children }) => {
         }
     }, [carrito])
 
-    const removeItem = (id) => {
-        const nuevoCarrito = carrito.filter((item) => item.id !== id);
-        setCarrito(nuevoCarrito);
+    const removeItem = (product) => {
+        if (isInCart(product.id)) {
+            const nuevoCarrito = carrito.filter((item) => item.id !== product.id);
+            setCarrito(nuevoCarrito);
+        }
     };
 
-    const clear = () => setCarrito([]); //<-- no funcione
+    const clearCart = () => setCarrito([]);
     const isInCart = (id) => carrito.find((item) => item.id === id);
 
-    const contexto = { carrito, addItem, clear, removeItem, isInCart };
+    const contexto = { carrito, addItem, clearCart, removeItem, isInCart };
 
     return <Provider value={contexto}>{children}</Provider>;
 };
