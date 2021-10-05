@@ -22,8 +22,6 @@ Construye la aplicacion para producción en el folder `build`.
 
 ## conceptos de react usados en esta aplicación:
 
-### `sugar syntax`
-
 ### `webpack`
 
 ### `JSX`
