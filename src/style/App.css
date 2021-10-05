@@ -57,12 +57,18 @@ body header .FaOpencart {
   color: orange;
 }
 
-body .cartReceipt {
-  width: 65vw;
-  margin: auto;
+body .cartView .cartData {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-body .cartReceipt .cartReceiptData {
+body .cartView .cartData .cartReceipt {
+  width: 65vw;
+  margin: 2% auto;
+}
+
+body .cartView .cartData .cartReceipt .cartReceiptData {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,7 +80,7 @@ body .cartReceipt .cartReceiptData {
           justify-content: space-between;
 }
 
-body .cartReceipt .cartReceiptData .cartItem {
+body .cartView .cartData .cartReceipt .cartReceiptData .cartItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,12 +91,12 @@ body .cartReceipt .cartReceiptData .cartItem {
           align-items: center;
 }
 
-body .cartReceipt .cartReceiptData .cartItem .cartThumbnail {
+body .cartView .cartData .cartReceipt .cartReceiptData .cartItem .cartThumbnail {
   width: 20vh;
   height: 20vh;
 }
 
-body .cartReceipt .cartReceiptData .cartItem .cartInfo {
+body .cartView .cartData .cartReceipt .cartReceiptData .cartItem .cartInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,39 +112,81 @@ body .cartReceipt .cartReceiptData .cartItem .cartInfo {
   text-align: right;
 }
 
-body .cartReceipt .cartReceiptData .cartItem .cartInfo :first-child {
+body .cartView .cartData .cartReceipt .cartReceiptData .cartItem .cartInfo :first-child {
   text-align: left;
 }
 
-body .cartReceipt .cartReceiptData .cartDelButton {
+body .cartView .cartData .cartReceipt .cartReceiptData .cartDelButton {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
 }
 
-body .cartReceipt .cartReceiptData .cartDelButton:active {
+body .cartView .cartData .cartReceipt .cartReceiptData .cartDelButton:active {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-body .cartReceipt .cartReceiptData .cartSubTotal {
+body .cartView .cartData .cartReceipt .cartReceiptData .cartSubTotal {
   width: 10vw;
 }
 
-body .cartReceipt .cartCost {
+body .cartView .cartData .cartReceipt .cartCost {
+  text-align: end;
+  padding: 3vw;
+}
+
+body .cartView .cartData .cartReceipt .delCart {
+  margin: 0px 50%;
+}
+
+body .cartView .checkout {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 3vw;
+  width: 15vw;
+  margin: 25vh auto;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+  max-height: 20vh;
+  text-align: center;
+  min-height: 15vh;
+}
+
+body .cartView .checkout .checkoutBtn {
+  border: none;
+  background: orange;
+}
+
+body .cartView .done {
+  background-image: url("../images/checkout.jpg");
+  padding-top: 15vh;
+  font-size: 1vw;
+  background-size: 105%;
+  min-height: 70vh;
+  min-width: 25vw;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .cartView .done h3 {
+  margin: 5px;
 }
 
 body .textoDeCarga {

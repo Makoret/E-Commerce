@@ -3,6 +3,7 @@ import { contexto } from "../context/cartContext";
 import CartElement from "./CartElement";
 import { Link } from "react-router-dom";
 import { firestore } from '../firebase/index.js'
+import { AiOutlineFieldNumber } from "react-icons/ai";
 
 export default function Cart() {
     const { removeItem, carrito, clearCart } = useContext(contexto);
@@ -11,14 +12,33 @@ export default function Cart() {
     const [nombre, setNombre] = useState("")
     const [correo, setCorreo] = useState("")
     const [contacto, setContacto] = useState("")
+    const [boletaId, setBoletaId] = useState("")
+    const [checkoutDate, setCheckoutDate] = useState("")
+
+    const getDate = () => {
+        setCheckoutDate(Date().toLocaleString())
+        console.log(checkoutDate);
+        return checkoutDate
+    }
 
     const checkout = () => {
         const collection = firestore.collection("ordenes")
         const usuario = { nombre, correo, contacto }
-        const orden = { carrito, usuario, date: Date().toLocaleString(), cantidad: totalItems, costo: total }
+        const orden = { carrito, usuario, date: getDate(), cantidad: totalItems, costo: total }
         const query = collection.add(orden)
-        console.log(query);
 
+        let newArr = []
+        firestore.collection("ordenes").get()
+            .then((snapshot) => {
+                snapshot.docs.forEach((doc) => {
+                    newArr.push({ ...doc.data(), ID: doc.id })
+                })
+                console.log(newArr);
+                const aux = newArr.find((element) => element.date === checkoutDate);
+                console.log(aux);
+                setBoletaId(aux.ID)
+            })
+            .catch((error) => { console.log(error) })
     }
 
     const guardarNombre = (e) => setNombre(e.target.value)
@@ -37,25 +57,36 @@ export default function Cart() {
         })
     }, [carrito, removeItem])
 
-    return <>
+    return <div className="cartView">
         {carrito.length > 0 ? (
-            <div>
+            <div className="cartData">
                 <div className="cartReceipt">
                     {carrito.map((element) => (
                         <Fragment key={element.id}>
                             <CartElement producto={element} />
                         </Fragment>
                     ))}
-                    <div className="cartCost">Total: {total}</div>
-                    <div className="cartCost">Cantidad de items: {totalItems}</div>
-                    <button onClick={() => clearCart()}>Vaciar Carrito</button>
+                    <div className="cartCost">
+                        Cantidad: {totalItems}<br />
+                        Costo total: {total}
+                    </div>
+                    <input className="delCart" type="button" onClick={() => clearCart()} value="Vaciar Carrito" />
                 </div>
-                <div className="checkout">
-                    <input type="text" placeholder="name" onChange={guardarNombre}></input>
-                    <input type="number" placeholder="phone" onChange={guardarContacto}></input>
-                    <input type="email" placeholder="email" onChange={guardarCorreo}></input>
-                    <input type="button" value="Checkout" onClick={checkout} />
-                </div >
+                {boletaId !== "" ? (
+                    <div className="done">
+                        <h3>Codigo de boleta</h3>
+                        <div>{boletaId}</div>
+                    </div>
+                ) : (
+                    <div className="checkout">
+                        <h4>Compra ya!</h4>
+                        <input type="text" placeholder="name" onChange={guardarNombre}></input>
+                        <input type="text" placeholder="phone" onChange={guardarContacto}></input>
+                        <input type="email" placeholder="email" onChange={guardarCorreo}></input>
+                        <input className="checkoutBtn" type="button" value="Checkout" onClick={checkout} />
+                    </div >
+                )
+                }
             </div>
         ) : (
             <div className="textoDeCarga">
@@ -63,6 +94,6 @@ export default function Cart() {
                 <Link to={`/`} >volver al inicio</Link>
             </div>
         )}
-    </>
+    </div>
 
 }

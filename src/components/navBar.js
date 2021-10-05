@@ -8,7 +8,6 @@ export default function navBar(params) {
     return (
         <header>
             <Logo />
-            {/* <div className="location">location</div> */}
             <Link className="categoria" to={`/categoria/pastas`}>
                 Pastas
             </Link>
@@ -21,9 +20,6 @@ export default function navBar(params) {
             <Link className="categoria" to={`/categoria/salsas`}>
                 Salsas
             </Link>
-            {/* <Search />
-            <div className="user">user</div>
-        <div className="history">history</div> */}
             <Link className="cart" to={`/Cart`}>
                 <CartWidget />
             </Link>
