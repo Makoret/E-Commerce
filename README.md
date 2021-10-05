@@ -2,7 +2,7 @@
 
 <img src="src\images\E-commerce.gif"/>
 
-## Available Scripts
+## Scripts disponibles
 
 ### `npm install`
 
