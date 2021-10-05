@@ -2,7 +2,7 @@
 
 Puedes ver el proyecto en [E-Commerce](https://makoret.github.io/E-Commerce/).
 
-![gif]<img src="src\images\E-commerce.gif"/>
+<img src="src\images\E-commerce.gif"/>
 
 ## Proyecto en react
 
