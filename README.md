@@ -1,7 +1,5 @@
 # E-Commerce
 
-Puedes ver el proyecto en [E-Commerce](https://makoret.github.io/E-Commerce/).
-
 <img src="src\images\E-commerce.gif"/>
 
 ## Available Scripts
