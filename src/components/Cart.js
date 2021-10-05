@@ -3,7 +3,8 @@ import { contexto } from "../context/cartContext";
 import CartElement from "./CartElement";
 import { Link } from "react-router-dom";
 import { firestore } from '../firebase/index.js'
-import { AiOutlineFieldNumber } from "react-icons/ai";
+import { FaHome } from "react-icons/fa";
+
 
 export default function Cart() {
     const { removeItem, carrito, clearCart } = useContext(contexto);
@@ -39,6 +40,7 @@ export default function Cart() {
                 setBoletaId(aux.ID)
             })
             .catch((error) => { console.log(error) })
+        clearCart()
     }
 
     const guardarNombre = (e) => setNombre(e.target.value)
@@ -89,10 +91,21 @@ export default function Cart() {
                 }
             </div>
         ) : (
-            <div className="textoDeCarga">
-                <div >No agregaste productos!</div>
-                <Link to={`/`} >volver al inicio</Link>
-            </div>
+            <>
+                {boletaId !== "" ? (
+                    <div className="done">
+                        <h3>Codigo de boleta</h3>
+                        <div>{boletaId}</div>
+                    </div>
+                ) : (
+                    <div className="textoDeCarga">
+                        <Link className="home" to={`/`} ><FaHome className="home" /></Link>
+                        <div >No agregaste productos!</div>
+                    </div>
+                )
+                }
+
+            </>
         )}
     </div>
 

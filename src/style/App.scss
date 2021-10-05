@@ -132,10 +132,11 @@ body {
         .done {
             background-image: url("../images/checkout.jpg");
             padding-top: 15vh;
-            font-size: 1vw;
-            background-size: 105%;
+            font-size: 2vh;
+            background-position: center;
+            background-size: 65vh;
             min-height: 70vh;
-            min-width: 25vw;
+            min-width: 10vw;
             background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
@@ -149,11 +150,16 @@ body {
     }
 
     .textoDeCarga {
-        min-height: 80vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-around;
+        min-height: 50vh;
+        text-align: center;
+        margin: 10vh auto;
+
+        .home {
+            height: 5vh;
+            width: 5vw;
+            text-decoration: none;
+            color: orange;
+        }
     }
 
     .main {

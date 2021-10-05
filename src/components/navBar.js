@@ -2,7 +2,6 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import Logo from "./Logo";
-// import Search from "./search";
 
 export default function navBar(params) {
     return (
